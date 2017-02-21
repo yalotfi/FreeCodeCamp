@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yaseen</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  </head>
-  <body>
-    <nav class="nav navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#toggleNav">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Yaseen Lotfi</a>
-        </div>
-        <div class="collapse navbar-collapse" id="toggleNav">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">About Me</a></li>
-            <li><a href="#">Experience</a></li>
-            <li><a href="#">Education</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
-          </ul>
+  <title>Yaseen</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <style type="text/css">
+    #midNavSection {
+      height: 50px;
+    }
+    .navbar-header {
+      text-align: center;
+    }
+  </style>
+<!-- ******************************** -->
+<!-- ******* Navbar Structure ******* -->
+<!-- ******************************** -->
+  <nav class="nav navbar-inverse">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <!-- Header/Banner -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#toggleNav">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Yaseen Lotfi</a>
+          </div>
+        </div> <!-- Close .col-md-2 -->
+        <div class="col-md-7" id="midNavSection"></div> <!-- JavaScript animation goes here -->
+        <div class="col-md-3">
+          <!-- Nav links and list structure -->
+          <div class="collapse navbar-collapse" id="toggleNav">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">About Me</a></li>
+              <li><a href="#">Experience</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+            </ul>
+          </div> <!-- Close .navbar-collapse -->
+        </div> <!-- Close .col-md-4 -->
+      </div> <!-- Close .row -->
+    </div> <!-- Close .container-fluid -->
+  </nav>
+<!-- ****************************** -->
+<!-- ******* Body Structure ******* -->
+<!-- ****************************** -->
+<!--  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="well">
+          <h1>Some Text</h1>
         </div>
       </div>
-    </nav>
-  </body>
+      <div class="col-md-8">
+        <div class="well">
+          <h1>Some text</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+<!-- ******************************** -->
+<!-- ******* Footer Structure ******* -->
+<!-- ******************************** -->
+
+
+<!-- ************************************ -->
+<!-- ******* Javascript Structure ******* -->
+<!-- ************************************ -->
+
+<!--   <script type="text/javascript">
+    $(document).ready(function {
+      $('#midNavSection').width()
+    })
+  </script> -->
+  <!-- Bootstrap CDN for CSS -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+  <!-- Bootstrap CDN for jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <!-- Bootstrap CDN for JavaScript -->
+  <script type="text/JavaScript" src="bootstrap.min.js"></script>
+
+  <!-- Call JavaScript for p5 Animations-->
+  <script src="js/libraries/p5.min.js" type="text/javascript"></script>
+
+  <!-- Animation at the top of the screen -->
+  <script src="js/tanWave.js" type="text/javascript"></script>
+</body>
 </html>
