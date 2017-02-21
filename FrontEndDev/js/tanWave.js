@@ -10,7 +10,7 @@ function setup() {
     var navWidth = document.getElementById('midNavSection').offsetWidth;
     var navHeight = document.getElementById('midNavSection').offsetHeight;
     console.log(navWidth, navHeight);
-    var canvas = createCanvas(768, 50);
+    var canvas = createCanvas(navWidth, navHeight);
     canvas.parent('midNavSection');
     w = width + 8;
     dx = (TWO_PI / period) * xspacing;
