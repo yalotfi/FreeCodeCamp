@@ -7,23 +7,29 @@ var dx;					// Increment x by dx
 var yvalues;			// Array that stores height values
 
 function setup() {
-    var navWidth = document.getElementById('midNavSection').offsetWidth;
-    var navHeight = document.getElementById('midNavSection').offsetHeight;
-    console.log(navWidth, navHeight);
-    var canvas = createCanvas(navWidth, navHeight);
-    canvas.parent('midNavSection');
-    w = width + 8;
-    dx = (TWO_PI / period) * xspacing;
-    yvalues = new Array(floor(w/xspacing));
-    }
+    createDynamicCanvas();
+}
 
 function draw() {
     background('#222');
-    calcWave();
+    calcSinWave();
     renderWave();
 }
 
-function calcWave() {
+function createDynamicCanvas() {
+    var element = document.getElementById('midNavSection');
+    var navWidth = element.offsetWidth;
+    var navHeight = element.offsetHeight;
+    //console.log(navWidth, navHeight);
+    var canvas = createCanvas(navWidth, navHeight);
+    canvas.parent('midNavSection');
+
+    w = navWidth + xspacing;
+    dx = (TWO_PI / period) * xspacing;
+    yvalues = new Array(floor(w/xspacing));
+}
+
+function calcSinWave() {
 	theta += 0.02;
 	
 	var x = theta;
@@ -35,8 +41,12 @@ function calcWave() {
 
 function renderWave() {
 	noStroke();
-	fill(51, 173, 255);
+	fill('#33ADFF');
 	for(var x = 0; x < yvalues.length; x++) {
 		ellipse(x * xspacing, height/2 + yvalues[x], 8, 8);
 	}
+}
+
+window.onresize = function() {
+    setup();
 }
