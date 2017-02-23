@@ -1,7 +1,7 @@
 var xspacing = 8;		// Distance between horizintal locations
 var w;					// Width of plot
 var theta = 0.0;		// Starting angle theta
-var amplitude = 25.0;	// Height of wave
+var amplitude;	        // Height of wave
 var period = 100.0;		// Pixels before wave repeats
 var dx;					// Increment x by dx
 var yvalues;			// Array that stores height values
@@ -25,6 +25,7 @@ function createDynamicCanvas() {
     canvas.parent('midNavSection');
 
     w = navWidth + xspacing;
+    amplitude = navHeight / 2;
     dx = (TWO_PI / period) * xspacing;
     yvalues = new Array(floor(w/xspacing));
 }
