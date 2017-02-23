@@ -14,6 +14,9 @@
 
   <!-- Bootstrap: JavaScript -->
   <script type="text/JavaScript" src="js/libraries/bootstrap.min.js"></script>
+
+  <!-- Toggle Breakpoint CSS (Don;t bother with Less) -->
+  <link rel="stylesheet" type="text/css" href="css/toggleBreakpoint.css">
 </head>
 <body>
   <style type="text/css">
@@ -29,6 +32,14 @@
           padding-right: 15px;
         }
       }
+    @media (max-width: 660px) {
+      .navbar-brand .lotfi {
+        display: none;
+      }
+    }
+    #headerDiv {
+      padding: 0px;
+    }
     .navbar-header {
       padding-left: 0px
     }
@@ -47,18 +58,18 @@
     <div class="container-fluid" id="mainNavContainer">
       <div class="row">
         <!-- Header/Banner -->
-        <div class="col-md-9" id="headerAnimation">
+        <div class="col-lg-9 col-md-12">
           <div class="container-fluid inner-container">
             <div class="row inner-row">
-              <div class="col-md-2 col-xs-3">
+              <div class="col-lg-2 col-md-3 col-xs-3" id="headerDiv">
                 <div class="navbar-header">
-                  <a class="navbar-brand" href="#">YASEEN LOTFI</a>
+                  <a class="navbar-brand" href="#">YASEEN <span class="lotfi">LOTFI</span></a>
                 </div>
               </div> <!-- Close header .col-md-2 -->
               <!-- JavaScript animation and HTML Canvas go here -->
-              <div class="col-md-10 col-xs-7" id="midNavSection"></div>
+              <div class="col-lg-10 col-md-8 col-xs-7" id="midNavSection"></div>
               <!-- Drop down button at break point 768px -->
-              <div class="col-sm-2 col-xs-2">
+              <div class="col-lg-2 col-md-1 col-xs-2">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#toggleNav">
                   <span class="sr-only">Toggle Navigation</span>
                   <span class="icon-bar"></span>
@@ -70,7 +81,7 @@
           </div> <!-- Close inner .container -->
         </div> <!-- Close .col-md-8 -->
         <!-- Nav links and list structure -->
-        <div class="col-md-3" id="navLinks">
+        <div class="col-lg-3" id="navLinks">
           <div class="collapse navbar-collapse" id="toggleNav">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">About Me</a></li>
@@ -86,21 +97,8 @@
 <!-- ****************************** -->
 <!-- ******* Body Structure ******* -->
 <!-- ****************************** -->
-<!--  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="well">
-          <h1>Some Text</h1>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="well">
-          <h1>Some text</h1>
-        </div>
-      </div>
-    </div>
-  </div>
--->
+
+
 <!-- ******************************** -->
 <!-- ******* Footer Structure ******* -->
 <!-- ******************************** -->
