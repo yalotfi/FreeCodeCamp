@@ -22,6 +22,10 @@
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/toggleBreakpoint.css">
   <link rel="stylesheet" type="text/css" href="css/body.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/slideshow.css"> -->
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
 <!-- ******************************** -->
@@ -58,44 +62,84 @@
           <div class="collapse navbar-collapse no-padding-left" id="navLinks">
             <ul class="nav navbar-nav navbar-right">
               <li><a class="nav-text" href="#about">Who am I?</a></li>
-              <li><a class="nav-text" href="#s">Experience</a></li>
               <li><a class="nav-text" href="#">Projects</a></li>
+              <li><a class="nav-text" href="#">Contact</a></li>
             </ul>
           </div> <!-- Close .navbar-collapse -->
         </div> <!-- Close .col-md-10 -->
       </div> <!-- Close .row -->
     </div> <!-- Close .container-fluid -->
   </nav>
-<!-- ****************************** -->
-<!-- ******* Body Structure ******* -->
-<!-- ****************************** -->
-<!-- Image: col-md-5 col-sm-6 col-xs-7 -->
-<!-- Banner: col-md-7 col-sm-6 col-xs-5 -->
-<!-- Text: col-lg-5 -->
-<div class="container-fluid body-elements">
-  <div class="row row-centered">
-    <div class="col-md-6 col-centered">
-      <img class="center-block" src="images/Prof_Pic.jpg">
+<!-- ***************************** -->
+<!-- ******* About Section ******* -->
+<!-- ***************************** -->
+  <!-- Image: col-md-5 col-sm-6 col-xs-7 -->
+  <!-- Banner: col-md-7 col-sm-6 col-xs-5 -->
+  <!-- Text: col-lg-5 -->
+  <div class="container-fluid body-elements" id="about">
+    <div class="row row-centered">
+      <div class="col-md-6 col-centered">
+        <img class="center-block" src="images/Prof_Pic.jpg">
+      </div>
+      <div class="col-md-6 col-centered">
+        <h2 style="font-size: 20px;">Hi, I'm Yaseen Lotfi and I'm a data scientist, a web developer, and always curious.</h2>
+        <hr>
+        <p style="font-size: 16px;">Currently, I'm finishing my last semester at William & Mary, majoring in both Business Analytics with Data Science and International Relations. In my free time, I like to explore datasets and uncover the stories that they tell. Within the broader context of data analysis, however, machine learning fascinates me for its seemingly magical abilities (although it’s just super fancy linear algebra and calculus). In general, I spend a lot of time thinking about astronomy, solutions to global warming, and artifical intelligence.</p>
+      </div>
     </div>
-    <div class="col-md-6 col-centered">
-      <h3 style="font-size: 20px;">Hi, I'm Yaseen Lotfi and I'm a data scientist, a web developer, and always curious.</h3>
+  </div>
+
+<!-- ******************************* -->
+<!-- ******* Project Section ******* -->
+<!-- ******************************* -->
+  <div class="container-fluid body-elements">
+    <div class="row row-centered">
+      <h2>Some of my Projects</h2>
       <hr>
-      <p style="font-size: 16px;">Currently, I'm finishing my last semester at William & Mary, majoring in both Business Analytics with Data Science and International Relations. In my free time, I like to explore datasets and uncover the stories that they tell. Within the broader context of data analysis, however, machine learning fascinates me for its seemingly magical abilities (although it’s just super fancy linear algebra and calculus). In general, I spend a lot of time thinking about astronomy, solutions to global warming, and artifical intelligence.</p>
+      <div class="col-md-4">
+        <img class="project-img" src="images/McMerica.png">
+      </div>
+      <div class="col-md-4">
+        <img class="project-img" src="images/KNN.png">
+      </div>
+      <div class="col-md-4">
+        <img class="project-img" src="images/gradientDescent.png">
+      </div>
     </div>
   </div>
-</div>
-<div class="containter-fluid body-elements">
-  <div class="row row-centered">
-    <div class="col-lg-12 col-centered">
-      
+
+<!-- ******************************* -->
+<!-- ******* Contact Section ******* -->
+<!-- ******************************* -->
+
+  <div class="nav navbar-inverse">
+    <div class="row row-centered">
+      <footer class = "footer navbar-bottom bg-2 text-center">
+        <ul id = "footerList">
+          <li>
+            <a href="mailto:yalotfi@outlook.com">
+              <i class = "fa fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a href = "https://github.com/yalotfi" target = "_blank">
+              <i class = "fa fa-github-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href = "https://www.linkedin.com/in/yaseenlotfi" target = "_blank">
+              <i class = "fa fa-linkedin-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href = "https://soundcloud.com/s-o-h-h-l" target = "_blank">
+              <i class = "fa fa-soundcloud"></i>
+            </a>
+          </li>     
+        </ul>
+      </footer>
     </div>
   </div>
-</div>
-
-<!-- ******************************** -->
-<!-- ******* Footer Structure ******* -->
-<!-- ******************************** -->
-
 
 <!-- ************************************ -->
 <!-- ******* Load p5 Dependencies ******* -->

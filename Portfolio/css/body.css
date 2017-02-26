@@ -16,10 +16,31 @@ body {
 
 /* Center Bootstrap Grid Columns */
 .row-centered {
-    text-align:center;
+  text-align:center;
 }
 .col-centered {
-    display:inline-block;
-    float:none;
-    margin-right:-4px;
+  display:inline-block;
+  float:none;
+  margin-right:-4px;
 }
+
+.project-img {
+  width: 460px;
+  height: 345px;
+}
+
+/** Footer CSS **/
+footer { text-align: center; }
+footer div { background-color: #262626; }
+#footerList { list-style: none; padding: 0;}
+#footerList li { 
+  display: inline;
+  padding-right: 2.5%; 
+}
+#footerList li a {
+  text-decoration: none;
+  color: white; 
+  font-size: 36px;
+  padding: 0; 
+}
+.fa:hover { color: #33adff; }
