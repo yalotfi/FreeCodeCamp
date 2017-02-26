@@ -25,7 +25,7 @@ function createDynamicCanvas() {
     canvas.parent('midNavSection');
 
     w = navWidth + xspacing;
-    amplitude = navHeight / 2;
+    amplitude = (navHeight / 2);
     dx = (TWO_PI / period) * xspacing;
     yvalues = new Array(floor(w/xspacing));
 }

@@ -1,0 +1,30 @@
+#mainNavContainer {
+  padding: 10px 0px 10px 0px;
+}
+@media (min-width: 768px) {
+  #mainNavContainer {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+@media (max-width: 768px) {
+  #mainNavContainer {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+@media (max-width: 733px) {
+  .navbar-brand .lotfi {
+    display: none;
+  }
+}
+.no-padding-left { padding-left: 0px; }
+.no-padding-right { padding-right: 0px }
+.no-padding { padding: 0px; }
+#midNavSection { height: 50px; }
+#navLinks {
+  position: relative;
+  float: left;
+}
+.nav-text { color: #fff !important; }
+.nav-text:hover { color: #33ADFF !important; }
