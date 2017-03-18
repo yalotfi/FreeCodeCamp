@@ -1,3 +1,8 @@
+var quote;
+var author;
+var link = "https://twitter.com/intent/tweet?text=";
+var tweet;
+
 function getQuote() {
   $.ajax({
     headers: {
@@ -8,8 +13,13 @@ function getQuote() {
     url: "https://andruxnet-random-famous-quotes.p.mashape.com/cat=",
     success: function(response) {
       var res = JSON.parse(response);
-      $("#quote-text").text(res.quote);
-      $("#author").text(res.author);
+      quote = res.quote;
+      author = res.author;
+      tweet = '"' + quote + '"' + " - " + author;
+
+      $("#quote-text").text(quote);
+      $("#author").text(author);
+      $("#tweet-quote").attr("href", link + encodeURIComponent(tweet));
     }
   });
 }
@@ -17,4 +27,7 @@ function getQuote() {
 $(document).ready(function() {
   getQuote();
   $("#new-quote").on("click", getQuote);
-});
+  $("#tweet-quote").on("click", function() {
+    $("#tweet-quote").attr("href", link + encodeURIComponent(tweet));
+  });
+}); 
