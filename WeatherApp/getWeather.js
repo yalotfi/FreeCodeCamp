@@ -11,6 +11,10 @@ function getData() {
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
+      /************************
+      Construct the API Call, making sure to
+      insert the coordinates where appropriate
+      *************************/
       $.getJSON('apiCall.json', function(data) {
         for (var key in data) {
           if (data.hasOwnProperty(key)) {
@@ -23,6 +27,9 @@ function getData() {
             }
           }
         }
+        /************************
+        Parse the API Response and populate the app with the data
+        *************************/
         $.getJSON(jsonAPI, function(response) {
           console.log(response);
           var weather = response['weather'][0];
