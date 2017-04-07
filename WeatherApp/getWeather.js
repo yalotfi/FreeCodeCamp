@@ -1,10 +1,4 @@
-var api;
-var link = 'http://api.openweathermap.org/data/2.5/weather?';
-var latCoords = 'lat=';
-var lonCoords = '&lon=';
-var units = '&units=metric';
-var key = '31f8be28b38ac24b868953a57805d5d6&callback';
-var call = '&APPID=' + key;
+var jsonAPI = '';
 
 function getData() {
   /************************
@@ -17,15 +11,25 @@ function getData() {
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
-      latCoords += lat;
-      lonCoords += lon;
-      api = link + latCoords + lonCoords + call + units;
-      $.getJSON(api, function(data) {
-        var weather = data['weather'][0];
-        $('#Temp').text(data.main.temp);
-        $('#City').text(data.name + ', ' + data.sys.country);
-        $('#Conditions').text(weather.main);
-        console.log(data)
+      $.getJSON('apiCall.json', function(data) {
+        for (var key in data) {
+          if (data.hasOwnProperty(key)) {
+            if (key === 'latCoords') {
+              jsonAPI += data[key] + lat;
+            } else if (key === 'lonCoords') {
+              jsonAPI += data[key] + lon;
+            } else {
+              jsonAPI += data[key];
+            }
+          }
+        }
+        $.getJSON(jsonAPI, function(response) {
+          console.log(response);
+          var weather = response['weather'][0];
+          $('#Temp').text(response.main.temp);
+          $('#City').text(response.name + ', ' + response.sys.country);
+          $('#Conditions').text(weather.main);
+        });
       });
     }, function() {
       $('#Status').append('<p>Unable to Determine Location</p>');

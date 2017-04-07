@@ -1,0 +1,7 @@
+{
+    "link": "http://api.openweathermap.org/data/2.5/weather?",
+    "latCoords": "lat=",
+    "lonCoords": "&lon=",
+    "key": "&APPID=31f8be28b38ac24b868953a57805d5d6&callback",
+    "units": "&units=metric"
+}
