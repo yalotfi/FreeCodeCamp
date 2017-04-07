@@ -1,28 +1,33 @@
-var api;
-var link = 'http://api.openweathermap.org/data/2.5/weather?';
-var latCoords = 'lat=';
-var lonCoords = '&lon=';
-var units = '&units=metric';
-var key = '31f8be28b38ac24b868953a57805d5d6&callback';
-var end = '&APPID=' + key + '=JSON_CALLBACK';
-
 function getData() {
-  var geo = navigator.geolocation
+  var api;
+  var link = 'http://api.openweathermap.org/data/2.5/weather?';
+  var latCoords = 'lat=';
+  var lonCoords = '&lon=';
+  var units = '&units=metric';
+  var key = '31f8be28b38ac24b868953a57805d5d6&callback';
+  var end = '&APPID=' + key + '=JSON_CALLBACK';
   var out = document.getElementById("output");
-  out.innerHTML = '<p>Locating...</p>';
-  if (!geo) {
-    out.innerHTML = '<p>Browser Not Supported</p>';
+  $('#output').text('Loading...');
+  if (!navigator.geolocation) {
+    $('#output').text('Browser Not Supported');
   } else {
-    geo.getCurrentPosition(function(position) {
-      var latitude = position.coords.latitude;
+    navigator.geolocation.getCurrentPosition(function(position) {
       var longitude = position.coords.longitude;
+      var latitude = position.coords.latitude;
       latCoords += latitude;
       lonCoords += longitude;
       api = link+latCoords+lonCoords+units+key+end;
+      $.getJSON(api, function(data) {
+        var lon = data.coord.lon;
+        var lat = data.coord.lat;
+        console.log([lon, lat]);
+      });
     }, function() {
-      out.innerHTML = '<p>Unable to Determine Location</p>';
+      $('#output').text('Unable to Determine Location');
     });
   }
 }
 
-getData();
+$(document).ready(function() {
+  getData();
+});
