@@ -30,11 +30,12 @@ function getData() {
         /************************
         Parse the API Response and populate the app with the data
         *************************/
-        $.getJSON(jsonAPI, function(response) {
-          console.log(response);
-          var weather = response['weather'][0];
-          $('#Temp').text(response.main.temp);
-          $('#City').text(response.name + ', ' + response.sys.country);
+        $.getJSON(jsonAPI, function(res) {
+          // console.log(response);
+          console.log(typeof res.main.temp)
+          var weather = res['weather'][0];
+          $('#City').text(res.name + ', ' + res.sys.country);
+          $('#Temp').text(Math.round(res.main.temp));
           $('#Conditions').text(weather.main);
         });
       });
@@ -47,7 +48,7 @@ function getData() {
 $(document).ready(function() {
   /************************
   City element will always be populated and a new
-  element will be created if an error occurs.
+  Status element will be created if an error occurs.
   *************************/
   $('#City').text('Locating...');
   getData();
