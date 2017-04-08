@@ -1,5 +1,39 @@
 body {
-  background-color: #000;
+  background-color: #fff;
   color: #000;
   font-family: 'Raleway', sans-serif;
+}
+
+#banner {
+  margin-bottom: 30px;
+  padding: 20px 30px;
+  background-color: #00b0ff;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 0px;
+}
+
+#Status {
+  margin-bottom: 30px;
+  padding: 0px;
+  font-size: 1.5em;
+}
+
+button {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+button:hover {
+  color: #00b0ff;
+}
+
+a { color: #000; }
+a:hover {
+  color: #00b0ff;
+  text-decoration: none;
 }

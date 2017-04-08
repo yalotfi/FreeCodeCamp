@@ -5,28 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Local Weather</title>
+
+  <!-- CSS Resources -->
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="libraries/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<style type="text/css">
-  div {
-    background-color: #fff;
-    border-style: solid;
-    border-color: #000;
-  }
-</style>
-
-  <div class="col-md-12 text-center">
-    <h1>Weather App</h1>
+  <div class="col-md-12 text-center" id="banner">
+    <h1><b>Weather App</b></h1>
   </div>
-  <div id="Status">
+  <div id="Status" class="col-md-12 text-center">
     <p id="City"></p>
-    <p id="Temp"></p>
+    <p>
+      <span id="Temp"></span> <button>&#8451;</button>
+    </p>
     <p id="Conditions"></p>
   </div>
-  <div>By Yaseen Lotfi</div>
+  <div class="col-md-12 text-center">By <a href="https://github.com/yalotfi"><b>Yaseen Lotfi</b></a></div>
+
+  <!-- JS Resources -->
   <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script type="text/JavaScript" src="libraries/bootstrap.min.js"></script>
   <script type="text/javascript" src="getWeather.js"></script>
