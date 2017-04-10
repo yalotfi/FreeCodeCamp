@@ -1,13 +1,50 @@
 var jsonAPI = '';
 
-function decode(str) {  // Unused, but useful function to decode entities
+function decode(str) {  // Useful function to decode entities
   var textArea = document.createElement('textarea');
   textArea.innerHTML = str;
   return textArea.value;
 }
 
-function toFahrOrCels(temp, unit='F') {  // Default convert to Fahrentheit
+function toFahrOrCels(temp, unit='F') {  // Default will convert to F
   return (unit) ? ((temp * 9 / 5) + 32) : ((temp - 32) * 5 / 9);
+}
+
+function iconSwitch(conditionCode) {
+  /************************
+  Switch icons based on current condition group, defined by
+  the first digit of a 3-digit code. Default is cloudy.
+  *************************/
+  // [thunder: 2, drizzle: 3, rain: 5, snow: 6, Fog-Haze: 7, clear: 8]
+  switch (conditionCode) {
+    case 2:
+      // THUNDER!!!
+      $('#icon').addClass('wi-thunderstorm');
+      break;
+    case 3:
+      // DRIZZLE
+      $('#icon').addClass('wi-raindrops');
+      break;
+    case 5:
+      // RAIN!!!
+      $('#icon').addClass('wi-rain');
+      break;
+    case 6:
+      // SNOW!!!
+      $('#icon').addClass('wi-snowflake-cold');
+      break;
+    case 7:
+      // Atmospheric Conditions
+      $('#icon').addClass('wi-fog');
+      break;
+    case 8:
+      // CLEAR!!!
+      $('#icon').addClass('wi-day-sunny');
+      break;
+    default:
+      // CLOUDY :'(
+      $('#icon').addClass('wi-cloudy');
+  }
 }
 
 function loading() {
@@ -52,10 +89,12 @@ function getData() {
         *************************/
         $.getJSON(jsonAPI, function(data) {
           var weather = data['weather'][0];
+          var conditionCode = weather.id.toString().substr(0,1);
           $('#City').text(data.name + ', ' + data.sys.country);
           $('#TempC').text(Math.round(data.main.temp));
           $('#TempF').text(Math.round(toFahrOrCels(data.main.temp)));
           $('#Conditions').text(weather.main);
+          iconSwitch(parseInt(conditionCode));
         });
       });
     }, function() {
