@@ -1,39 +1,83 @@
+/* Full Page
+**********************/
 body {
   background-color: #fff;
   color: #000;
   font-family: 'Raleway', sans-serif;
 }
 
-#banner {
-  margin-bottom: 30px;
-  padding: 20px 30px;
+/* Progress Bar
+**********************/
+#accent-bar {
+  width: 100%;
   background-color: #00b0ff;
+  padding: 15px 0px;
 }
-
+/* Header
+**********************/
+#banner {
+  padding: 20px 30px;
+  background-color: #0081cb;
+  color: #fff;
+}
 h1 {
   font-size: 4em;
   margin: 0px;
 }
 
+/* Main Status content
+**********************/
 #Status {
-  margin-bottom: 30px;
-  padding: 0px;
+  padding: 30px 0px;
   font-size: 1.5em;
+  background-color: #69e2ff;
+}
+#Status div {
+  margin: 0px;
+  height: 50px;
+}
+#Status div p {
+  height: 30px;
+  margin-bottom: 20px;
+}
+#Status div button {
+  height: 30px;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+.content { /* Center Status Content Vertically */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+/* Button Styling
+**********************/
 button {
   background-color: transparent;
   color: #000;
   border: none;
   display: inline-block;
   cursor: pointer;
+  outline-width: 5px;
+  outline-color: #ffeb3b;
 }
 button:hover {
-  color: #00b0ff;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #ffeb3b;
 }
 
-a { color: #000; }
+/* Footer Styling
+*******************/
+#footer {
+  background-color: #00b0ff;
+  color: #fff;
+  padding: 5px 0px;
+}
+a { color: #fff; }
 a:hover {
-  color: #00b0ff;
+  color: #ffeb3b;
   text-decoration: none;
 }
+a:active { text-decoration: none; }

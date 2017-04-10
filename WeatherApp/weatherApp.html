@@ -12,20 +12,31 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+  <div class="col-md-12" id="accent-bar">
+    <div id="progress-bar"></div>
+  </div>
   <div class="col-md-12 text-center" id="banner">
     <h1><b>Weather App</b></h1>
   </div>
   <div id="Status" class="col-md-12 text-center">
-    <p id="City"></p>
+    <div>
+      <p class="content" id="City"></p>
+    </div>
     <div id="divC">
-      <button id="buttonC"><span id="TempC"></span> &#8451;</button>
+      <button class="content" id="buttonC">
+        <span id="TempC"></span> &#8451;
+      </button>
     </div>
     <div id="divF">
-      <button id="buttonF"><span id="TempF"></span> &#8457;</button>
+      <button class="content" id="buttonF">
+        <span id="TempF"></span> &#8457;
+      </button>
     </div>
-    <p id="Conditions"></p>
+    <div>
+      <p class="content" id="Conditions"></p>
+    </div>
   </div>
-  <div class="col-md-12 text-center">By <a href="https://github.com/yalotfi"><b>Yaseen Lotfi</b></a></div>
+  <div class="col-md-12 text-center" id="footer">By <a href="https://github.com/yalotfi"><b>Yaseen Lotfi</b></a></div>
 
   <!-- JS Resources -->
   <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
