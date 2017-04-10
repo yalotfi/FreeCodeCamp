@@ -35,7 +35,7 @@ function getData() {
       Construct the API Call, making sure to
       insert the coordinates where appropriate
       *************************/
-      $.getJSON('apiCall.json', function(res) {
+      $.getJSON('js/apiCall.json', function(res) {
         for (var key in res) {
           if (res.hasOwnProperty(key)) {
             if (key === 'latCoords') {

@@ -59,6 +59,12 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
 }
+#Status #divIcon { height: 80px; }
+.wi {
+  font-size: 3em;
+  color: #ffeb3b;
+  margin-top: 10px;
+}
 
 /* Button Styling
 **********************/
