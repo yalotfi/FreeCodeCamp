@@ -6,7 +6,7 @@ function decode(str) {  // Unused, but useful function to decode entities
   return textArea.value;
 }
 
-function toFahrOrCels(temp, unit='F') {  // Used on line 57
+function toFahrOrCels(temp, unit='F') {  // Default convert to Fahrentheit
   return (unit) ? ((temp * 9 / 5) + 32) : ((temp - 32) * 5 / 9);
 }
 

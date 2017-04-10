@@ -11,8 +11,17 @@ body {
 #accent-bar {
   width: 100%;
   background-color: #00b0ff;
-  padding: 15px 0px;
+  padding: 13px 0px;
 }
+.progress {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #ffeb3b;
+  padding: 0px;
+  margin: 0px; 
+}
+
 /* Header
 **********************/
 #banner {
