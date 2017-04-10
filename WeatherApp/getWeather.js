@@ -1,5 +1,19 @@
 var jsonAPI = '';
 
+function decode(str) {
+  var textArea = document.createElement('textarea');
+  textArea.innerHTML = str;
+  return textArea.value;
+}
+
+function toFahrenheit(C) {
+  return (C * 9 / 5) + 32;
+}
+
+function toCelsius(F) {
+  return (F - 32) * 5 / 9;
+}
+
 function getData() {
   /************************
   Check if geolocation is possible then pull API data
@@ -31,11 +45,10 @@ function getData() {
         Parse the API Response and populate the app with the data
         *************************/
         $.getJSON(jsonAPI, function(res) {
-          // console.log(response);
-          console.log(typeof res.main.temp)
           var weather = res['weather'][0];
           $('#City').text(res.name + ', ' + res.sys.country);
-          $('#Temp').text(Math.round(res.main.temp));
+          $('#TempC').text(Math.round(res.main.temp));
+          $('#TempF').text(Math.round(toFahrenheit(res.main.temp)));
           $('#Conditions').text(weather.main);
         });
       });
@@ -45,6 +58,25 @@ function getData() {
   }
 }
 
+function toggleTemp() {
+  $('button').on('click', function() {
+    /************************
+    Convert Celsius to fahrenheit and change symbol
+    *************************/
+    var degC = '&#8451;';
+    var degF = '&#8457;';
+    if ($(this).text() == decode(degC)) {
+      var tempC = parseInt($('#Temp').val());
+      $(this).text(decode(degF));
+      $('#Temp').text(toFahrenheit(tempC));
+    } else {
+      var tempF = parseInt($('#Temp').val());
+      $(this).text(decode(degC));
+      $('#Temp').text(toCelsius(tempF));
+    }
+  });
+}
+
 $(document).ready(function() {
   /************************
   City element will always be populated and a new
@@ -52,4 +84,5 @@ $(document).ready(function() {
   *************************/
   $('#City').text('Locating...');
   getData();
+  toggleTemp();
 });
