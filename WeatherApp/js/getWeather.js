@@ -35,26 +35,26 @@ function getData() {
       Construct the API Call, making sure to
       insert the coordinates where appropriate
       *************************/
-      $.getJSON('apiCall.json', function(data) {
-        for (var key in data) {
-          if (data.hasOwnProperty(key)) {
+      $.getJSON('apiCall.json', function(res) {
+        for (var key in res) {
+          if (res.hasOwnProperty(key)) {
             if (key === 'latCoords') {
-              jsonAPI += data[key] + lat;
+              jsonAPI += res[key] + lat;
             } else if (key === 'lonCoords') {
-              jsonAPI += data[key] + lon;
+              jsonAPI += res[key] + lon;
             } else {
-              jsonAPI += data[key];
+              jsonAPI += res[key];
             }
           }
         }
         /************************
         Parse the API Response and populate the app with the data
         *************************/
-        $.getJSON(jsonAPI, function(res) {
-          var weather = res['weather'][0];
-          $('#City').text(res.name + ', ' + res.sys.country);
-          $('#TempC').text(Math.round(res.main.temp));
-          $('#TempF').text(Math.round(toFahrOrCels(res.main.temp)));
+        $.getJSON(jsonAPI, function(data) {
+          var weather = data['weather'][0];
+          $('#City').text(data.name + ', ' + data.sys.country);
+          $('#TempC').text(Math.round(data.main.temp));
+          $('#TempF').text(Math.round(toFahrOrCels(data.main.temp)));
           $('#Conditions').text(weather.main);
         });
       });
