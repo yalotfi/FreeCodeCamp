@@ -1,17 +1,23 @@
 var jsonAPI = '';
 
-function decode(str) {
+function decode(str) {  // Unused, but useful function to decode entities
   var textArea = document.createElement('textarea');
   textArea.innerHTML = str;
   return textArea.value;
 }
 
-function toFahrenheit(C) {
-  return (C * 9 / 5) + 32;
+function toFahrOrCels(temp, unit='F') {  // Used on line 57
+  return (unit) ? ((temp * 9 / 5) + 32) : ((temp - 32) * 5 / 9);
 }
 
-function toCelsius(F) {
-  return (F - 32) * 5 / 9;
+function loading() {
+  /************************
+  Default values for loading period until data is ready.
+  *************************/
+  $('#City').text('Locating...');
+  $('#TempC').text('--');
+  $('#TempF').text('--');
+  $('#Conditions').text('--');
 }
 
 function getData() {
@@ -48,7 +54,7 @@ function getData() {
           var weather = res['weather'][0];
           $('#City').text(res.name + ', ' + res.sys.country);
           $('#TempC').text(Math.round(res.main.temp));
-          $('#TempF').text(Math.round(toFahrenheit(res.main.temp)));
+          $('#TempF').text(Math.round(toFahrOrCels(res.main.temp)));
           $('#Conditions').text(weather.main);
         });
       });
@@ -59,30 +65,20 @@ function getData() {
 }
 
 function toggleTemp() {
-  $('button').on('click', function() {
-    /************************
-    Convert Celsius to fahrenheit and change symbol
-    *************************/
-    var degC = '&#8451;';
-    var degF = '&#8457;';
-    if ($(this).text() == decode(degC)) {
-      var tempC = parseInt($('#Temp').val());
-      $(this).text(decode(degF));
-      $('#Temp').text(toFahrenheit(tempC));
-    } else {
-      var tempF = parseInt($('#Temp').val());
-      $(this).text(decode(degC));
-      $('#Temp').text(toCelsius(tempF));
-    }
+  /************************
+  Default show Fahrenheit and toggle  between F and C
+  *************************/
+  $('#divF').show(); $('#divC').hide();
+  $('#buttonC').click(function() {
+    $('#divC').hide(); $('#divF').show();
+  });
+  $('#buttonF').click(function() {
+    $('#divF').hide(); $('#divC').show();
   });
 }
 
 $(document).ready(function() {
-  /************************
-  City element will always be populated and a new
-  Status element will be created if an error occurs.
-  *************************/
-  $('#City').text('Locating...');
+  loading();
   getData();
   toggleTemp();
 });
