@@ -1,9 +1,16 @@
 /* Full Page
 **********************/
 body {
+  margin: 0px;
   background-color: #fff;
   color: #000;
   font-family: 'Roboto', sans-serif;
+}
+
+#mainDiv {
+  position: absolute;
+  margin: auto 0;
+  width: 400px; height: 600px;
 }
 
 /* Progress Bar
@@ -54,11 +61,12 @@ h1 {
   margin-bottom: 20px;
   padding: 0px;
 }
-.content { /* Center Status Content Vertically */
+/* Center Status Content Vertically */
+/*.content { 
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
+}*/
 #Status #divIcon { height: 80px; }
 .wi {
   font-size: 3em;
