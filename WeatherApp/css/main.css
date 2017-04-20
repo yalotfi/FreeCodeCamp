@@ -6,11 +6,11 @@ body {
   color: #000;
   font-family: 'Roboto', sans-serif;
 }
-
 #mainDiv {
   position: absolute;
-  margin: auto 0;
+  margin: auto;
   width: 400px; height: 600px;
+  text-align: center;
 }
 
 /* Progress Bar
@@ -58,26 +58,10 @@ h1 {
 }
 #Status div button {
   height: 30px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   padding: 0px;
-}
-/* Center Status Content Vertically */
-/*.content { 
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}*/
-#Status #divIcon { height: 80px; }
-.wi {
-  font-size: 3em;
-  color: #ffeb3b;
-  margin-top: 10px;
-}
-
-/* Button Styling
-**********************/
-button {
   background-color: transparent;
+  font-size: 1em;
   color: #000;
   border: none;
   display: inline-block;
@@ -85,10 +69,16 @@ button {
   outline-width: 5px;
   outline-color: #ffeb3b;
 }
-button:hover {
+#Status button:hover {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: #ffeb3b;
+}
+#Status #divIcon { height: 100px; }
+.wi {
+  font-size: 3em;
+  color: #ffeb3b;
+  margin-top: 10px;
 }
 
 /* Footer Styling
@@ -98,7 +88,10 @@ button:hover {
   color: #fff;
   padding: 5px 0px;
 }
-a { color: #fff; }
+a {
+  color: #fff;
+  text-decoration: none;
+}
 a:hover {
   color: #ffeb3b;
   text-decoration: none;
